@@ -1,8 +1,4 @@
-import 'dart:developer';
-
-
 import 'package:flutter/material.dart';
-
 import '../home_screen.dart';
 import '../widgets/button.dart';
 import '../widgets/textfield.dart';
@@ -87,17 +83,8 @@ class _SignupScreenState extends State<SignupScreen> {
     MaterialPageRoute(builder: (context) => const LoginScreen()),
   );
 
-  goToHome(BuildContext context) => Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const HomeScreen()),
-  );
-
   _signup() async {
-    final user =
     await _auth.createUserWithEmailAndPassword(_email.text, _password.text);
-    if (user != null) {
-      log("User Created Succesfully");
-      goToHome(context);
-    }
+    Navigator.pop(context);
   }
 }

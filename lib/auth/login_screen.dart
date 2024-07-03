@@ -1,9 +1,7 @@
-import 'dart:developer';
 
 import 'package:firebase_demo/auth/signup_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../home_screen.dart';
 import '../widgets/button.dart';
 import '../widgets/textfield.dart';
 import 'auth_service.dart';
@@ -76,18 +74,8 @@ class _LoginScreenState extends State<LoginScreen> {
         MaterialPageRoute(builder: (context) => const SignupScreen()),
       );
 
-  goToHome(BuildContext context) => Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
-      );
-
   _login() async {
-    final user =
         await _auth.loginUserWithEmailAndPassword(_email.text, _password.text);
 
-    if (user != null) {
-      log("User Logged In");
-      goToHome(context);
-    }
   }
 }

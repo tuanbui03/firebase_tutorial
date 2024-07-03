@@ -33,9 +33,4 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-
-  goToLogin(BuildContext context) => Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const LoginScreen()),
-  );
 }
